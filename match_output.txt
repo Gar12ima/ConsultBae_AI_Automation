@@ -1,0 +1,84 @@
+======================================================================
+MATCH ANALYSIS
+======================================================================
+
+Naukri <-> Gig Workers
+--------------------------------------------------
+Exact email matches: 15
+Arjun Mishra <-> Arjun Mishra | arjun.mishra70@example.com
+Deepak Nair <-> Deepak Nair | deepak.nair44@example.com
+Gaurav Mehta <-> Gaurav Mehta | gaurav.mehta79@mailtest.example.org
+Isha Chopra <-> Isha Chopra | isha.chopra95@mailtest.example.org
+Isha Kapoor <-> Isha Kapoor | isha.kapoor54@example.com
+Karan Bhatia <-> Karan Bhatia | karan.bhatia32@mailtest.example.org
+Meera Bhatia <-> Meera Bhatia | meera.bhatia52@mailtest.example.org
+Neha Bhatia <-> Neha Bhatia | neha.bhatia60@mailtest.example.org
+Rahul Chopra <-> Rahul Chopra | rahul.chopra70@example.com
+Sneha Chopra <-> Sneha Chopra | sneha.chopra99@example.in
+Tanvi Agarwal <-> Tanvi Agarwal | tanvi.agarwal97@example.in
+Tanvi Gupta <-> Tanvi Gupta | tanvi.gupta31@example.com
+Varun Jain <-> Varun Jain | varun.jain29@example.com
+Varun Saxena <-> Varun Saxena | varun.saxena21@example.in
+Vikram Saxena <-> Vikram Saxena | vikram.saxena60@example.com
+
+Naukri <-> CBNexus
+--------------------------------------------------
+Exact phone matches: 25
+Nikhil Mehta <-> Nikhil Mehta | 9000000104
+Arjun Mishra <-> Arjun Mishra | 9000000106
+Vikram Saxena <-> Vikram Saxena | 9000000113
+Deepak Mehta <-> Deepak Mehta | 9000000116
+Arjun Mehta <-> Arjun Mehta | 9000000131
+Gaurav Mehta <-> Gaurav Mehta | 9000000133
+Rahul Chopra <-> Rahul Chopra | 9000000137
+Isha Chopra <-> Isha Chopra | 9000000138
+Sahil Malhotra <-> SAHIL MALHOTRA | 9000000143
+Ritu Sharma <-> RITU SHARMA | 9000000146
+Tanvi Agarwal <-> Tanvi Agarwal | 9000000148
+Sneha Chopra <-> Sneha Chopra | 9000000162
+Varun Saxena <-> VARUN SAXENA | 9000000170
+Karan Bhatia <-> KARAN BHATIA | 9000000211
+Meera Bhatia <-> MEERA BHATIA | 9000000223
+Shreya Gupta <-> Shreya Gupta | 9000000227
+Priya Saxena <-> Priya Saxena | 9000000231
+Tanvi Gupta <-> Tanvi Gupta | 9000000254
+Rahul Malhotra <-> RAHUL MALHOTRA | 9000000260
+Varun Jain <-> Varun Jain | 9000000263
+Rohit Nair <-> Rohit Nair | 9000000268
+Neha Bhatia <-> Neha Bhatia | 9000000273
+Priya Singh <-> Priya Singh | 9000000287
+Isha Kapoor <-> Isha Kapoor | 9000000295
+Deepak Nair <-> DEEPAK NAIR | 9000000296
+
+Gig Workers <-> CBNexus
+--------------------------------------------------
+Exact normalized name matches: 20
+Arjun Mehta <-> Arjun Mehta
+Arjun Mishra <-> Arjun Mishra
+Deepak Nair <-> DEEPAK NAIR
+Divya Chopra <-> DIVYA CHOPRA
+Gaurav Mehta <-> Gaurav Mehta
+Isha Chopra <-> Isha Chopra
+Isha Kapoor <-> Isha Kapoor
+Karan Bhatia <-> KARAN BHATIA
+Karan Chopra <-> Karan Chopra
+Manish Bhatia <-> MANISH BHATIA
+Meera Bhatia <-> MEERA BHATIA
+Neha Bhatia <-> Neha Bhatia
+Rahul Chopra <-> Rahul Chopra
+Sneha Chopra <-> Sneha Chopra
+Tanvi Agarwal <-> Tanvi Agarwal
+Tanvi Gupta <-> Tanvi Gupta
+Varun Jain <-> Varun Jain
+Varun Saxena <-> VARUN SAXENA
+Vikram Mehta <-> Vikram Mehta
+Vikram Saxena <-> Vikram Saxena
+
+Data Quality Check
+--------------------------------------------------
+email_id worker_name rate location status skill_tags name_norm email_norm
+     NaN         NaN  NaN      NaN    NaN        NaN                     
+
+======================================================================
+END OF MATCH ANALYSIS
+======================================================================
