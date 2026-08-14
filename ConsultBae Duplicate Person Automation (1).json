@@ -1,0 +1,212 @@
+{
+  "name": "ConsultBae Duplicate Person Automation",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b2b614f0-18fd-4564-8fbf-dfd99b9302b5",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:5000/people",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        176,
+        0
+      ],
+      "id": "96e3e64d-a800-4d98-906c-47f9f95821b3",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "const people = $input.first().json.people || [];\n\nreturn people.map(person => ({\n  json: person\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        368,
+        0
+      ],
+      "id": "321e58b7-dd38-4ece-89e3-827e1249a92b",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "f14d7253-92b7-449c-b5cf-acc8f7a27aeb",
+              "leftValue": "={{ $json.match_method }}",
+              "rightValue": "match",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        528,
+        0
+      ],
+      "id": "71f65818-7ba2-4ba8-b66d-c69c66658954",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b59d5513-4a93-436b-8eb2-b60bc2bf91fa",
+              "name": "Alert Type",
+              "value": "Duplicate Person Found",
+              "type": "string"
+            },
+            {
+              "id": "0a306549-9054-44db-9476-1604d7ecaa4e",
+              "name": "Message",
+              "value": "Duplicate record detected in ConsultBae database",
+              "type": "string"
+            },
+            {
+              "id": "2055b3a8-f28a-4bad-8b08-475b24d3dc03",
+              "name": "Person Name",
+              "value": "={{$json.name}}",
+              "type": "string"
+            },
+            {
+              "id": "2cb07ffe-d871-4d66-811e-d89728352fc6",
+              "name": "Email",
+              "value": "={{$json.email}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        800,
+        -16
+      ],
+      "id": "0e0f2018-6125-4d45-8547-767ec000317f",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "sendTo": "garima1201mishra@gmail.com",
+        "subject": "ConsultBae Duplicate Person Alert",
+        "message": "=Duplicate person detected.  Name: {{$json[\"Person Name\"]}}  Email: {{$json.Email}}  Message: {{$json.Message}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        992,
+        -16
+      ],
+      "id": "cab0524e-fb4d-4d0c-b019-3b9a616bf5c6",
+      "name": "Send a message",
+      "webhookId": "400e8af0-f730-4856-b462-5291a67a77f0",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Wxu8iXdBSy68QdPy",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "37fa2982-a117-4f26-8c36-d3b666c0975c",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "996cc652dd1554da2617c476347964c64609b70132e4674e279cf44601cfce91"
+  },
+  "nodeGroups": [],
+  "id": "2la0kuJSeSZWfQgE",
+  "tags": []
+}
